@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 Route::get('',[CategoryController ::class,'home'])-> name('home');
 Route::get('/product',[ProductController ::class,'product'])-> name('product');
+Route::get('/demo',[demoController ::class,'demo'])-> name('demo');
