@@ -1,7 +1,7 @@
 <?php
-
+namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CatrgoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+   return view('welcome');
 });
+Route::get('',[CategoryController ::class,'home'])-> name('home');
+Route::get('/product',[ProductController ::class,'product'])-> name('product');
