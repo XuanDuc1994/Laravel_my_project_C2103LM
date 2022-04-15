@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CatrgoryController;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +20,7 @@ Route::get('/', function () {
 Route::get('',[CategoryController ::class,'home'])-> name('home');
 Route::get('/product',[ProductController ::class,'product'])-> name('product');
 Route::get('/demo',[demoController ::class,'demo'])-> name('demo');
+Route::group(['prefix'=>'admin'],function(){
+Route::get('',[AdminController ::class,'dashboard'])-> name('admin');
+
+});
