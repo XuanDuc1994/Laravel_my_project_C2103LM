@@ -20,7 +20,11 @@ Route::get('/', function () {
 Route::get('',[CategoryController ::class,'home'])-> name('home');
 Route::get('/product',[ProductController ::class,'product'])-> name('product');
 Route::get('/demo',[demoController ::class,'demo'])-> name('demo');
-Route::group(['prefix'=>'admin'],function(){
+Route::get('/create',[AdminController ::class,'create'])-> name('create');
+Route::group(['prefix'=>'admin'],function()
+{
 Route::get('',[AdminController ::class,'dashboard'])-> name('admin');
+Route::get('create',[AdminController ::class,'create'])-> name('admin.create');
+Route::post('store',[AdminController ::class,'store'])-> name('admin.store');
 
 });
